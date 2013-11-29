@@ -3,7 +3,7 @@
 Summary:	Extended Model Formulas
 Name:		R-cran-%{modulename}
 Version:	1.1r1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/Math
 Source0:	ftp://stat.ethz.ch/R-CRAN/src/contrib/%{modulename}_%{fversion}.tar.gz
@@ -34,16 +34,6 @@ R CMD INSTALL %{modulename} --library=$RPM_BUILD_ROOT%{_libdir}/R/library/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post
-(cd %{_libdir}/R/library; umask 022; cat */CONTENTS > ../doc/html/search/index.txt
- R_HOME=%{_libdir}/R ../bin/Rcmd perl ../share/perl/build-help.pl --index)
-
-%postun
-if [ -f %{_libdir}/R/bin/Rcmd ];then
-	(cd %{_libdir}/R/library; umask 022; cat */CONTENTS > ../doc/html/search/index.txt
-	R_HOME=%{_libdir}/R ../bin/Rcmd perl ../share/perl/build-help.pl --index)
-fi
 
 %files
 %defattr(644,root,root,755)
