@@ -3,7 +3,7 @@
 Summary:	Extended Model Formulas
 Name:		R-cran-%{modulename}
 Version:	1.1r1
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/Math
 Source0:	ftp://stat.ethz.ch/R-CRAN/src/contrib/%{modulename}_%{fversion}.tar.gz
