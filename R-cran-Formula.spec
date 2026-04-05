@@ -1,15 +1,20 @@
 %define		fversion	%(echo %{version} |tr r -)
 %define		modulename	Formula
+%undefine	_debugsource_packages
 Summary:	Extended Model Formulas
 Name:		R-cran-%{modulename}
-Version:	1.1r1
-Release:	3
+Version:	1.2r5
+Release:	1
 License:	GPL v2+
 Group:		Applications/Math
-Source0:	ftp://stat.ethz.ch/R-CRAN/src/contrib/%{modulename}_%{fversion}.tar.gz
-# Source0-md5:	bf47f043979dc1587c442aca1d8ad4fa
+Source0:	https://cran.r-project.org/src/contrib/%{modulename}_%{fversion}.tar.gz
+# Source0-md5:	fa5128b436b67051b231e0a8281f36a4
 URL:		http://socserv.socsci.mcmaster.ca/jfox/
 BuildRequires:	R >= 2.8.1
+BuildRequires:	texlive-fonts-cmsuper
+BuildRequires:	texlive-latex
+BuildRequires:	texlive-latex-ae
+BuildRequires:	texlive-latex-ams
 BuildRequires:	texlive-tex-thumbpdf
 Requires(post,postun):	R >= 2.8.1
 Requires(post,postun):	perl-base
